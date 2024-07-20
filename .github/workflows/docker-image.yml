@@ -20,6 +20,5 @@ jobs:
      
     - name: Build the Docker image
       run: |
-        IMAGE_TAG=fabutnm/test:${{ github.sha }}
-        docker build . --file Dockerfile --tag $IMAGE_TAG
-        docker push $IMAGE_TAG
+        docker build -t fabutnm/test:${{ github.sha }} .
+        docker push fabutnm/test:${{ github.sha }}
